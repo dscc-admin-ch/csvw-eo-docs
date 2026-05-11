@@ -6,8 +6,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="CSVW Safe vocabulary and library">
-      
       
       
         <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-safe-docs/vocabulary/">
@@ -49,6 +47,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -453,7 +453,34 @@
   <span class="md-ellipsis">
     
   
-    Library
+    Library Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
   
 
     
@@ -729,76 +756,76 @@ However, it is often possible, and highly valuable, to share safe, public assump
 <img alt="Overview" src="images/csvw-safe_structure.png" /></p>
 <p>All properties of <code>csvw-safe</code> apply on these four classes.</p>
 <h4 id="json-ld-structure">JSON-LD Structure<a class="headerlink" href="#json-ld-structure" title="Permanent link">&para;</a></h4>
-<p>Thus from <code>csvw</code> json-ld</p>
-<pre><code class="language-bash">{
-  &quot;@type&quot;: &quot;csvw:Table&quot;,
-  &quot;name&quot;: &quot;penguins&quot;,
-  &quot;csvw:tableSchema&quot;: {
-    &quot;columns&quot;: [
-      {
-        &quot;@type&quot;: &quot;csvw:Column&quot;,
-        &quot;name&quot;: &quot;penguin_id&quot;,
-        &quot;datatype&quot;: &quot;integer&quot;
-      },
-      {
-        &quot;@type&quot;: &quot;csvw:Column&quot;,
-        &quot;name&quot;: &quot;species&quot;,
-        &quot;datatype&quot;: &quot;string&quot;,
-      },
-      ...
-    ]
-  }
-}
-</code></pre>
-<p>a <code>csvw</code> json-ld would organise classes followign this structure:</p>
-<pre><code class="language-bash">{
-  &quot;@type&quot;: &quot;csvw:Table&quot;,
-  &quot;name&quot;: &quot;penguins&quot;,
-  &quot;csvw-safe:x&quot;: &quot;csvw-safe_table_level_properties&quot;,
-  &quot;csvw:tableSchema&quot;: {
-    &quot;columns&quot;: [
-      {
-        &quot;@type&quot;: &quot;csvw:Column&quot;,
-        &quot;name&quot;: &quot;penguin_id&quot;,
-        &quot;datatype&quot;: &quot;integer&quot;,
-        &quot;csvw-safe:x&quot;: &quot;csvw-safe_column_level_properties&quot;,
-      },
-      {
-        &quot;@type&quot;: &quot;csvw:Column&quot;,
-        &quot;name&quot;: &quot;species&quot;,
-        &quot;datatype&quot;: &quot;string&quot;,
-        &quot;csvw-safe:public.partitions&quot;: [
-          { 
-            &quot;@type&quot;: &quot;csvw-safe:Partition&quot;, 
-            &quot;csvw-safe:predicate&quot;: { &quot;partitionValue&quot;: &quot;Adelie&quot; },
-            &quot;csvw-safe:x&quot;: &quot;csvw-safe_partition_level_properties&quot;,
-          },
-          ...
-        ]
-      },
-    ]
-  },
-  &quot;csvw-safe:additionalInformation&quot;: [
-    {
-      &quot;@type&quot;: &quot;csvw-safe:ColumnGroup&quot;,
-      &quot;csvw-safe:columns&quot;: [&quot;species&quot;, &quot;island&quot;],
-      &quot;csvw-safe:x&quot;: &quot;csvw-safe_columnGroup_level_properties&quot;,
-      &quot;csvw-safe:public.partitions&quot;: [
-        {
-          &quot;@type&quot;: &quot;csvw-safe:Partition&quot;,
-          &quot;csvw-safe:predicate&quot;: {
-            &quot;species&quot;: {&quot;partitionValue&quot;: &quot;Adelie&quot;}, 
-            &quot;island&quot;: {&quot;partitionValue&quot;: &quot;Torgersen&quot;},
-          }
-          &quot;csvw-safe:x&quot;: &quot;csvw-safe_partition_level_properties&quot;,
-        },
-        ....
-      ]
-    }
-  ]
-}
-</code></pre>
-<p>The next section describes the <code>csvw-safe</code> properties on the four classes.</p>
+<p>Thus from <code>csvw</code> json-ld
+<div class="highlight"><pre><span></span><code><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw:Table&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;penguins&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;csvw:tableSchema&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;columns&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">      </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw:Column&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;penguin_id&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;datatype&quot;</span>:<span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="o">}</span>,
+<span class="w">      </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw:Column&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;species&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;datatype&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
+<span class="w">      </span><span class="o">}</span>,
+<span class="w">      </span>...
+<span class="w">    </span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></p>
+<p>a <code>csvw</code> json-ld would organise classes followign this structure:
+<div class="highlight"><pre><span></span><code><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw:Table&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;penguins&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;csvw-safe:x&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw-safe_table_level_properties&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;csvw:tableSchema&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;columns&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">      </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw:Column&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;penguin_id&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;datatype&quot;</span>:<span class="w"> </span><span class="s2">&quot;integer&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;csvw-safe:x&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw-safe_column_level_properties&quot;</span>,
+<span class="w">      </span><span class="o">}</span>,
+<span class="w">      </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw:Column&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;species&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;datatype&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;csvw-safe:public.partitions&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">          </span><span class="o">{</span><span class="w"> </span>
+<span class="w">            </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw-safe:Partition&quot;</span>,<span class="w"> </span>
+<span class="w">            </span><span class="s2">&quot;csvw-safe:predicate&quot;</span>:<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="s2">&quot;partitionValue&quot;</span>:<span class="w"> </span><span class="s2">&quot;Adelie&quot;</span><span class="w"> </span><span class="o">}</span>,
+<span class="w">            </span><span class="s2">&quot;csvw-safe:x&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw-safe_partition_level_properties&quot;</span>,
+<span class="w">          </span><span class="o">}</span>,
+<span class="w">          </span>...
+<span class="w">        </span><span class="o">]</span>
+<span class="w">      </span><span class="o">}</span>,
+<span class="w">    </span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>,
+<span class="w">  </span><span class="s2">&quot;csvw-safe:additionalInformation&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw-safe:ColumnGroup&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;csvw-safe:columns&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;species&quot;</span>,<span class="w"> </span><span class="s2">&quot;island&quot;</span><span class="o">]</span>,
+<span class="w">      </span><span class="s2">&quot;csvw-safe:x&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw-safe_columnGroup_level_properties&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;csvw-safe:public.partitions&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">        </span><span class="o">{</span>
+<span class="w">          </span><span class="s2">&quot;@type&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw-safe:Partition&quot;</span>,
+<span class="w">          </span><span class="s2">&quot;csvw-safe:predicate&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="s2">&quot;species&quot;</span>:<span class="w"> </span><span class="o">{</span><span class="s2">&quot;partitionValue&quot;</span>:<span class="w"> </span><span class="s2">&quot;Adelie&quot;</span><span class="o">}</span>,<span class="w"> </span>
+<span class="w">            </span><span class="s2">&quot;island&quot;</span>:<span class="w"> </span><span class="o">{</span><span class="s2">&quot;partitionValue&quot;</span>:<span class="w"> </span><span class="s2">&quot;Torgersen&quot;</span><span class="o">}</span>,
+<span class="w">          </span><span class="o">}</span>
+<span class="w">          </span><span class="s2">&quot;csvw-safe:x&quot;</span>:<span class="w"> </span><span class="s2">&quot;csvw-safe_partition_level_properties&quot;</span>,
+<span class="w">        </span><span class="o">}</span>,
+<span class="w">        </span>....
+<span class="w">      </span><span class="o">]</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">  </span><span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div>
+The next section describes the <code>csvw-safe</code> properties on the four classes.</p>
 <p>A <code>csvw:Column</code> defines properties that apply when grouping on a single column, while a <code>csvw-safe:ColumnGroup</code> defines properties that apply when grouping on multiple columns simultaneously. At the column level, DP-related properties (e.g. <code>maxGroupsPerUnit</code>) describe the worst-case contribution across all partitions of that column. This can be seen as an upper bound over any possible grouping on that single column. At the column group level, these properties describe the worst-case contribution across all partitions of the combined grouping key (i.e. the joint domain of the columns). The most granular level is the <code>Partition</code>, where properties such as <code>maxContributions</code> apply to a specific region of the domain (either for a column or a column group). Column and column group level properties should therefore be interpreted as upper bounds over their respective partitions.</p>
 <h3 id="22-csvw-safe-properties">2.2 CSVW-SAFE Properties<a class="headerlink" href="#22-csvw-safe-properties" title="Permanent link">&para;</a></h3>
 <p>CSVW-SAFE properties belong to two main categories:
