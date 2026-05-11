@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-safe-docs/library/">
       
       
+        <link rel="prev" href="../vocabulary/">
+      
+      
+        <link rel="next" href="../api/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>CSVW-SAFE Utility Library - CSVW-SAFE</title>
+        <title>Overview - CSVW-SAFE</title>
       
     
     
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CSVW-SAFE Utility Library
+              Overview
             
           </span>
         </div>
@@ -243,7 +247,7 @@
   <span class="md-ellipsis">
     
   
-    Concepts
+    Vocabulary
   
 
     
@@ -259,7 +263,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Concepts
+    Vocabulary
   
 
           </label>
@@ -272,14 +276,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/motivation.md" class="md-nav__link">
+      <a href="../vocabulary/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Motivation
+    Overview
   
 
     
@@ -304,18 +308,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -325,7 +331,7 @@
   <span class="md-ellipsis">
     
   
-    Specification
+    Library
   
 
     
@@ -336,12 +342,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Specification
+    Library
   
 
           </label>
@@ -351,17 +357,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../specification/classes.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Classes
+    Overview
   
 
     
@@ -370,34 +403,515 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../specification/properties.md" class="md-nav__link">
+      
         
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  <span class="md-ellipsis">
+  
     
   
-    Properties
   
-
-    
-  </span>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-via-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learn via example
+      
+    </span>
+  </a>
   
-
-      </a>
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripts-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scripts Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-make_metadata_from_datapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. make_metadata_from_data.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. make_metadata_from_data.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differential-privacy-dp-contribution-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Differential Privacy (DP) Contribution Levels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Differential Privacy (DP) Contribution Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-table-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. table level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-table_with_keys-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. table_with_keys level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-column-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. column level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-partition-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. partition level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Usage Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future plans:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-make_dummy_from_metadatapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. make_dummy_from_metadata.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. make_dummy_from_metadata.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-guarantees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Guarantees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typical-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-usage-examples_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Usage Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-validate_metadatapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. validate_metadata.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. validate_metadata.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-validate_metadata_shaclpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. validate_metadata_shacl.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. validate_metadata_shacl.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-assert_same_structurepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. assert_same_structure.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. assert_same_structure.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-validation-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Validation Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-csvw_to_smartnoise_sqlpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. csvw_to_smartnoise_sql.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. csvw_to_smartnoise_sql.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-csvw_to_opendp_contextpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. csvw_to_opendp_context.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. csvw_to_opendp_context.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-privacy-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Privacy Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-usage_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typical-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Typical Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#via-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Via CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-api-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python API Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -435,7 +949,7 @@
   <span class="md-ellipsis">
     
   
-    Python Library
+    API Reference
   
 
     
@@ -451,7 +965,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Python Library
+    API Reference
   
 
           </label>
@@ -464,14 +978,210 @@
   
   
     <li class="md-nav__item">
-      <a href="api/index.md" class="md-nav__link">
+      <a href="../api/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    API Overview
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/metadata_generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metadata Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/dummy_generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dummy Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/opendp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenDP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/smartnoise_sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SmartNoise SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metadata Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/utilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Utilities
   
 
     
