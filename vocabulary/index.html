@@ -1461,11 +1461,6 @@ The total number of rows a privacy unit may influence $l_1 = l_0 \cdot l_\infty$
 </table>
 <p><a href="https://github.com/dscc-admin-ch/csvw-safe/blob/main/csvw-safe-constraints.md"><code>csvw-safe-constraints.md</code></a> describes constraints on metadata, ensure that they are valid and not worst than worst case bounds. <a href="https://github.com/dscc-admin-ch/csvw-safe/blob/main/csvw-safe-constraints.ttl"><code>csvw-safe-constraints.ttl</code></a> describes part of the constraints in a turtle file. If validation against the SHACL constraints fails, the metadata MUST be considered invalid. Tools consuming CSVW-SAFE metadata SHOULD reject such metadata and MUST NOT proceed with its use for downstream tasks (e.g. query calibration or dummy data generation).</p>
 <p>This python library <code>csvw-safe</code> is available <a href="https://pypi.org/project/csvw-safe/0.0.1/">here on pypi</a> and described in <a href="https://github.com/dscc-admin-ch/csvw-safe/blob/main/csvw-safe-library/README.md">the README.md of <code>csvw-safe</code></a>.</p>
-<p><img alt="Overview" src="images/utils_scripts.png" /></p>
-<hr />
-<p>TODO:
-- multiple privacy unit
-- reference another JSON (or JSON-LD) file instead of embedding everything inline</p>
 
 
 
