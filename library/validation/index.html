@@ -10,26 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-safe-docs/">
+        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-safe-docs/library/validation/">
       
       
+        <link rel="prev" href="../dummy_generation/">
       
-        <link rel="next" href="vocabulary/overview/">
+      
+        <link rel="next" href="../../api/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>CSVW-SAFE</title>
+        <title>Validation - CSVW-SAFE</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#csvw-safe" class="md-skip">
+        <a href="#metadata-validation" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="CSVW-SAFE" class="md-header__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-SAFE" class="md-header__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Validation
             
           </span>
         </div>
@@ -182,7 +184,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="CSVW-SAFE" class="md-nav__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-SAFE" class="md-nav__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -197,37 +199,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -243,48 +218,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Features
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -343,7 +276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vocabulary/overview/" class="md-nav__link">
+      <a href="../../vocabulary/overview/" class="md-nav__link">
         
   
   
@@ -371,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vocabulary/classes/" class="md-nav__link">
+      <a href="../../vocabulary/classes/" class="md-nav__link">
         
   
   
@@ -399,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vocabulary/dummy_modeling/" class="md-nav__link">
+      <a href="../../vocabulary/dummy_modeling/" class="md-nav__link">
         
   
   
@@ -427,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vocabulary/dp_contributions/" class="md-nav__link">
+      <a href="../../vocabulary/dp_contributions/" class="md-nav__link">
         
   
   
@@ -455,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vocabulary/framework/" class="md-nav__link">
+      <a href="../../vocabulary/framework/" class="md-nav__link">
         
   
   
@@ -483,7 +416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vocabulary/examples/" class="md-nav__link">
+      <a href="../../vocabulary/examples/" class="md-nav__link">
         
   
   
@@ -515,18 +448,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -547,7 +482,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -565,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="library/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -593,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="library/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -621,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="library/workflows/" class="md-nav__link">
+      <a href="../workflows/" class="md-nav__link">
         
   
   
@@ -649,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="library/metadata_generation/" class="md-nav__link">
+      <a href="../metadata_generation/" class="md-nav__link">
         
   
   
@@ -677,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="library/dummy_generation/" class="md-nav__link">
+      <a href="../dummy_generation/" class="md-nav__link">
         
   
   
@@ -702,10 +637,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="library/validation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -721,6 +683,132 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#internal-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Internal Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shacl-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SHACL Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SHACL Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -733,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="library/integrations.md" class="md-nav__link">
+      <a href="../integrations.md" class="md-nav__link">
         
   
   
@@ -815,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/" class="md-nav__link">
+      <a href="../../api/" class="md-nav__link">
         
   
   
@@ -843,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/metadata_generation/" class="md-nav__link">
+      <a href="../../api/metadata_generation/" class="md-nav__link">
         
   
   
@@ -871,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/dummy_generation/" class="md-nav__link">
+      <a href="../../api/dummy_generation/" class="md-nav__link">
         
   
   
@@ -899,7 +987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/validation/" class="md-nav__link">
+      <a href="../../api/validation/" class="md-nav__link">
         
   
   
@@ -927,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/opendp/" class="md-nav__link">
+      <a href="../../api/opendp/" class="md-nav__link">
         
   
   
@@ -955,7 +1043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/smartnoise_sql/" class="md-nav__link">
+      <a href="../../api/smartnoise_sql/" class="md-nav__link">
         
   
   
@@ -983,7 +1071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/models/" class="md-nav__link">
+      <a href="../../api/models/" class="md-nav__link">
         
   
   
@@ -1011,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/utilities/" class="md-nav__link">
+      <a href="../../api/utilities/" class="md-nav__link">
         
   
   
@@ -1066,10 +1154,66 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
+  <a href="#internal-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Features
+        Internal Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Internal Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shacl-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SHACL Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SHACL Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Recommendations
       
     </span>
   </a>
@@ -1077,10 +1221,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
+  <a href="#structure-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Documentation
+        Structure Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Notes
       
     </span>
   </a>
@@ -1104,21 +1276,82 @@
 
 
 
-<h1 id="csvw-safe">CSVW-SAFE<a class="headerlink" href="#csvw-safe" title="Permanent link">&para;</a></h1>
-<p>CSVW-SAFE extends CSV on the Web (CSVW) with privacy-safe metadata for differential privacy workflows.</p>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Metadata generation</li>
-<li>Dummy data generation</li>
+<h1 id="metadata-validation">Metadata Validation<a class="headerlink" href="#metadata-validation" title="Permanent link">&para;</a></h1>
+<p>CSVW-SAFE provides two validation layers:</p>
+<ol>
+<li>Internal schema validation</li>
 <li>SHACL validation</li>
-<li>OpenDP integration</li>
-<li>SmartNoise SQL integration</li>
-</ul>
-<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+</ol>
+<hr />
+<h2 id="internal-validation">Internal Validation<a class="headerlink" href="#internal-validation" title="Permanent link">&para;</a></h2>
+<p>The <code>validate_metadata.py</code> utility validates metadata against the internal Pydantic schema.</p>
+<p>It checks:</p>
 <ul>
-<li>Vocabulary</li>
-<li>Python library</li>
-<li>API reference</li>
+<li>Required fields</li>
+<li>Datatypes</li>
+<li>Structural consistency</li>
+<li>Metadata object validity</li>
+</ul>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>validate_metadata.py<span class="w"> </span>metadata.json
+</code></pre></div>
+<h2 id="shacl-validation">SHACL Validation<a class="headerlink" href="#shacl-validation" title="Permanent link">&para;</a></h2>
+<p>The <code>validate_metadata_shacl.py</code> utility validates metadata against RDF SHACL constraints.</p>
+<p>This is the strictest validation layer.</p>
+<p>It checks:</p>
+<ul>
+<li>RDF consistency</li>
+<li>SHACL constraints</li>
+<li>Cross-field consistency</li>
+<li>Structural restrictions</li>
+</ul>
+<h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>validate_metadata_shacl.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>metadata.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>csvw-safe-constraints.ttl
+</code></pre></div>
+<h2 id="validation-recommendations">Validation Recommendations<a class="headerlink" href="#validation-recommendations" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Validator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>validate_metadata.py</code></td>
+<td>Fast schema validation</td>
+</tr>
+<tr>
+<td><code>validate_metadata_shacl.py</code></td>
+<td>Formal RDF validation</td>
+</tr>
+</tbody>
+</table>
+<p>Both validators should be used before publishing metadata.</p>
+<h2 id="structure-validation">Structure Validation<a class="headerlink" href="#structure-validation" title="Permanent link">&para;</a></h2>
+<p>The <code>assert_same_structure.py</code> utility validates that a generated dummy dataset matches the structure of the original dataset.</p>
+<p>It checks:</p>
+<ul>
+<li>Column names</li>
+<li>Column ordering</li>
+<li>Datatypes</li>
+<li>Nullable constraints</li>
+<li>Optional categorical domains</li>
+</ul>
+<h3 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>assert_same_structure.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>original.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>dummy.csv
+</code></pre></div>
+<h2 id="important-notes">Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h2>
+<p>Validation ensures structural correctness only.</p>
+<p>Validation does not guarantee:</p>
+<ul>
+<li>Metadata safety</li>
+<li>Privacy preservation</li>
+<li>Statistical validity</li>
 </ul>
 
 
@@ -1169,10 +1402,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
