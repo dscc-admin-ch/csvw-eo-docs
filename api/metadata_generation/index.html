@@ -329,7 +329,7 @@
   <span class="md-ellipsis">
     
   
-    Library
+    CSVW-SAFE Library
   
 
     
@@ -345,7 +345,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Library
+    CSVW-SAFE Library
   
 
           </label>
@@ -3096,9 +3096,6 @@ unit, contribution bounds, and optional partitions.</p>
 <p>--privacy-unit : str
     Name of the column representing the privacy unit (e.g., patient_id).</p>
 <p>--with_dependencies: bool. Default is True.</p>
-<p>--max-contributions : int, optional
-    Declared global maximum number of contributions per privacy unit
-    (L-infinity bound). Default is 2.</p>
 <p>--continuous_partitions : str, optional
     JSON string specifying bin boundaries for continuous columns.</p>
 <p>--column_groups : str, optional
@@ -3119,7 +3116,10 @@ can be used by downstream privacy-preserving data synthesis systems.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>csvw-safe-library/src/csvw_safe/make_metadata_from_data.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">733</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">730</span>
+<span class="normal">731</span>
+<span class="normal">732</span>
+<span class="normal">733</span>
 <span class="normal">734</span>
 <span class="normal">735</span>
 <span class="normal">736</span>
@@ -3217,18 +3217,7 @@ can be used by downstream privacy-preserving data synthesis systems.</p>
 <span class="normal">828</span>
 <span class="normal">829</span>
 <span class="normal">830</span>
-<span class="normal">831</span>
-<span class="normal">832</span>
-<span class="normal">833</span>
-<span class="normal">834</span>
-<span class="normal">835</span>
-<span class="normal">836</span>
-<span class="normal">837</span>
-<span class="normal">838</span>
-<span class="normal">839</span>
-<span class="normal">840</span>
-<span class="normal">841</span>
-<span class="normal">842</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">831</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Command-line entry point for generating CSVW-SAFE metadata.</span>
 
@@ -3252,10 +3241,6 @@ can be used by downstream privacy-preserving data synthesis systems.</p>
 <span class="sd">        Name of the column representing the privacy unit (e.g., patient_id).</span>
 
 <span class="sd">    --with_dependencies: bool. Default is True.</span>
-
-<span class="sd">    --max-contributions : int, optional</span>
-<span class="sd">        Declared global maximum number of contributions per privacy unit</span>
-<span class="sd">        (L-infinity bound). Default is 2.</span>
 
 <span class="sd">    --continuous_partitions : str, optional</span>
 <span class="sd">        JSON string specifying bin boundaries for continuous columns.</span>
@@ -3291,10 +3276,6 @@ can be used by downstream privacy-preserving data synthesis systems.</p>
     <span class="p">)</span>
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--privacy_unit&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Column defining the privacy unit (e.g., patient_id)&quot;</span><span class="p">)</span>
-
-    <span class="c1"># parser.add_argument(</span>
-    <span class="c1">#     &quot;--max_contributions&quot;, help=&quot;Declared bounds.maxContributions (l_infinity)&quot;, default=None</span>
-    <span class="c1"># )</span>
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
         <span class="s2">&quot;--continuous_partitions&quot;</span><span class="p">,</span>
@@ -3791,22 +3772,6 @@ partition definitions and contribution bounds.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>max_contributions</code>
-            </td>
-            <td>
-                  <code><span title="int">int</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Maximum number of contributions per unit.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
                 <code>continuous_partitions</code>
             </td>
             <td>
@@ -3988,14 +3953,10 @@ partition definitions and contribution bounds.</p>
 <span class="normal">721</span>
 <span class="normal">722</span>
 <span class="normal">723</span>
-<span class="normal">724</span>
-<span class="normal">725</span>
-<span class="normal">726</span>
-<span class="normal">727</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">make_metadata_from_data</span><span class="p">(</span>  <span class="c1"># noqa: PLR0913</span>
+<span class="normal">724</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">make_metadata_from_data</span><span class="p">(</span>  <span class="c1"># noqa: PLR0913</span>
     <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
     <span class="n">privacy_unit</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">with_dependencies</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="c1"># max_contributions: int,</span>
     <span class="n">continuous_partitions</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">column_groups</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">default_contributions_level</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;table&quot;</span><span class="p">,</span>
@@ -4012,8 +3973,6 @@ partition definitions and contribution bounds.</p>
 <span class="sd">        Boolean if add dependencies between columns</span>
 <span class="sd">    privacy_unit : str</span>
 <span class="sd">        Column identifying the privacy unit.</span>
-<span class="sd">    max_contributions : int</span>
-<span class="sd">        Maximum number of contributions per unit.</span>
 <span class="sd">    continuous_partitions : dict, optional</span>
 <span class="sd">        Numeric partition boundaries.</span>
 <span class="sd">    column_groups : list, optional</span>

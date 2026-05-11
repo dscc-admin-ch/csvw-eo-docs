@@ -329,7 +329,7 @@
   <span class="md-ellipsis">
     
   
-    Library
+    CSVW-SAFE Library
   
 
     
@@ -345,7 +345,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Library
+    CSVW-SAFE Library
   
 
           </label>
@@ -1907,47 +1907,6 @@ appear before dependents whenever possible.</p>
         <p>Command-line interface for dummy dataset generation.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>metadata_file</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Path to CSVW-SAFE metadata JSON file.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<details class="optional-parameters" open>
-  <summary>Optional parameters</summary>
-  <p>--rows : int
-    Number of rows to generate (default: 100)</p>
-<p>--output : str
-    Output CSV file (default: dummy.csv)</p>
-<p>--seed : int
-    Random seed (default: 0)</p>
-</details>
-
             <details class="mkdocstrings-source">
               <summary>Source code in <code>csvw-safe-library/src/csvw_safe/make_dummy_from_metadata.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">299</span>
@@ -1979,46 +1938,8 @@ appear before dependents whenever possible.</p>
 <span class="normal">325</span>
 <span class="normal">326</span>
 <span class="normal">327</span>
-<span class="normal">328</span>
-<span class="normal">329</span>
-<span class="normal">330</span>
-<span class="normal">331</span>
-<span class="normal">332</span>
-<span class="normal">333</span>
-<span class="normal">334</span>
-<span class="normal">335</span>
-<span class="normal">336</span>
-<span class="normal">337</span>
-<span class="normal">338</span>
-<span class="normal">339</span>
-<span class="normal">340</span>
-<span class="normal">341</span>
-<span class="normal">342</span>
-<span class="normal">343</span>
-<span class="normal">344</span>
-<span class="normal">345</span>
-<span class="normal">346</span>
-<span class="normal">347</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Command-line interface for dummy dataset generation.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    metadata_file : str</span>
-<span class="sd">        Path to CSVW-SAFE metadata JSON file.</span>
-
-<span class="sd">    Optional parameters</span>
-<span class="sd">    -------------------</span>
-<span class="sd">    --rows : int</span>
-<span class="sd">        Number of rows to generate (default: 100)</span>
-
-<span class="sd">    --output : str</span>
-<span class="sd">        Output CSV file (default: dummy.csv)</span>
-
-<span class="sd">    --seed : int</span>
-<span class="sd">        Random seed (default: 0)</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">328</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Command-line interface for dummy dataset generation.&quot;&quot;&quot;</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Generate a dummy dataset from CSVW-SAFE metadata.&quot;</span><span class="p">)</span>
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;metadata_file&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
