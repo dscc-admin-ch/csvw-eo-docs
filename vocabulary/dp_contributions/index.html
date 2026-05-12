@@ -430,6 +430,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Privacy Unit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -437,6 +454,17 @@
     <span class="md-ellipsis">
       
         DP Contribution Properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-dp-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required DP Fields
       
     </span>
   </a>
@@ -488,6 +516,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#total-influence-of-a-privacy-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total Influence of a Privacy Unit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#contribution-levels" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -495,6 +534,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Contribution Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1133,6 +1189,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Privacy Unit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1140,6 +1213,17 @@
     <span class="md-ellipsis">
       
         DP Contribution Properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-dp-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required DP Fields
       
     </span>
   </a>
@@ -1191,6 +1275,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#total-influence-of-a-privacy-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total Influence of a Privacy Unit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#contribution-levels" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1198,6 +1293,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Contribution Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1221,6 +1333,11 @@
 <h1 id="differential-privacy-contributions">Differential Privacy Contributions<a class="headerlink" href="#differential-privacy-contributions" title="Permanent link">&para;</a></h1>
 <p>CSVW-SAFE defines metadata for Differential Privacy (DP) calibration.</p>
 <p>These properties describe worst-case assumptions about how privacy units may contribute to datasets.</p>
+<div class="admonition danger">
+<p class="admonition-title">Warning</p>
+<p>Contribution assumptions must only describe public, non-sensitive information.
+More detailed contribution metadata may increase privacy leakage risk and should always be manually reviewed before publication.</p>
+</div>
 <h2 id="privacy-unit">Privacy Unit<a class="headerlink" href="#privacy-unit" title="Permanent link">&para;</a></h2>
 <p>A privacy unit identifies the entity protected by DP.</p>
 <p>Examples:</p>
@@ -1230,48 +1347,139 @@
 <li>household</li>
 <li>hospital</li>
 </ul>
-<p>Property:</p>
+<p>Two datasets are considered neighbouring datasets if and only if all rows associated with one privacy unit are added or removed.</p>
+<p>CSVW-SAFE currently assumes a single privacy unit per dataset.</p>
 <table>
 <thead>
 <tr>
 <th>Property</th>
+<th>Type</th>
 <th>Meaning</th>
+<th>Level</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>privacyUnit</code></td>
-<td>Privacy identifier column</td>
+<td>string</td>
+<td>Name of the privacy identifier column</td>
+<td>Table</td>
+</tr>
+<tr>
+<td><code>privacyId</code></td>
+<td>boolean</td>
+<td>Whether a column identifies privacy units</td>
+<td>Column</td>
 </tr>
 </tbody>
 </table>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csvw:Table&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hotpitalisations&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;privacyUnit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;patient_id&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tableSchema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csvw:Column&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;patient_id&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;privacyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;datatype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;int&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csvw:Column&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;diagnostic&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;privacyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;datatype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;additionalInformation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="dp-contribution-properties">DP Contribution Properties<a class="headerlink" href="#dp-contribution-properties" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Property</th>
 <th>Meaning</th>
+<th style="text-align: center;">Table</th>
+<th style="text-align: center;">Partition</th>
+<th style="text-align: center;">Column / ColumnGroup</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>maxContributions</code></td>
-<td>Maximum rows contributed</td>
-</tr>
-<tr>
-<td><code>maxGroupsPerUnit</code></td>
-<td>Maximum groups affected</td>
+<td>Maximum rows contributed by one privacy unit (<code>l∞</code>)</td>
+<td style="text-align: center;">Yes (1)</td>
+<td style="text-align: center;">Yes (3)</td>
+<td style="text-align: center;">No</td>
 </tr>
 <tr>
 <td><code>maxLength</code></td>
-<td>Maximum dataset/partition size</td>
+<td>Maximum dataset or partition size</td>
+<td style="text-align: center;">Yes (2)</td>
+<td style="text-align: center;">Yes (4)</td>
+<td style="text-align: center;">No</td>
 </tr>
 <tr>
 <td><code>publicLength</code></td>
 <td>Exact public size</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td><code>maxGroupsPerUnit</code></td>
+<td>Maximum groups affected by one privacy unit (<code>l0</code>)</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td><code>invariantPublicKeys</code></td>
+<td>Whether keys are public independently of privacy units</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
 </tr>
 </tbody>
 </table>
+<h2 id="required-dp-fields">Required DP Fields<a class="headerlink" href="#required-dp-fields" title="Permanent link">&para;</a></h2>
+<p>Some properties are mandatory for DP calibration depending on the query type.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Required For</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yes (1)</td>
+<td>Table-level queries</td>
+<td>Maximum contributions in dataset</td>
+</tr>
+<tr>
+<td>Yes (2)</td>
+<td>Table-level queries except counts</td>
+<td>Maximum dataset size</td>
+</tr>
+<tr>
+<td>Yes (3)</td>
+<td><code>GROUP BY</code> queries</td>
+<td>Maximum contributions per group</td>
+</tr>
+<tr>
+<td>Yes (4)</td>
+<td><code>GROUP BY</code> queries except counts</td>
+<td>Maximum group size</td>
+</tr>
+</tbody>
+</table>
+<p>Other properties are optional but may improve utility and reduce unnecessary DP noise.</p>
 <h2 id="maxcontributions"><code>maxContributions</code><a class="headerlink" href="#maxcontributions" title="Permanent link">&para;</a></h2>
 <p>Defines the maximum number of rows contributed by one privacy unit.</p>
 <p>At:</p>
@@ -1301,35 +1509,82 @@
 <li>February → 28 contributions</li>
 <li>July → 31 contributions</li>
 </ul>
+<h2 id="total-influence-of-a-privacy-unit">Total Influence of a Privacy Unit<a class="headerlink" href="#total-influence-of-a-privacy-unit" title="Permanent link">&para;</a></h2>
+<p>The total influence of a privacy unit corresponds to the total number of rows that may be affected when one privacy unit is added or removed from the dataset.</p>
+<p>It is defined as:</p>
+<p>$$
+l_1 = l_0 \cdot l_\infty
+$$</p>
+<p>where:</p>
+<ul>
+<li>
+<p>$l_0$ = <code>maxGroupsPerUnit</code><br />
+  (maximum number of groups a privacy unit may affect)</p>
+</li>
+<li>
+<p>$l_\infty$ = <code>maxContributions</code><br />
+  (maximum number of rows contributed within one group)</p>
+</li>
+</ul>
+<p>CSVW-SAFE does not define $l_1$ as a separate metadata property because its interpretation depends on the query structure and grouping context.</p>
 <h2 id="contribution-levels">Contribution Levels<a class="headerlink" href="#contribution-levels" title="Permanent link">&para;</a></h2>
-<p>CSVW-SAFE supports multiple granularity levels:</p>
+<p>CSVW-SAFE supports multiple granularity levels for contribution metadata.</p>
 <table>
 <thead>
 <tr>
 <th>Level</th>
 <th>Description</th>
+<th>Privacy Risk</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>table</code></td>
-<td>Table only</td>
+<td>Table-level contributions only</td>
+<td>Lowest</td>
 </tr>
 <tr>
 <td><code>table_with_keys</code></td>
-<td>Table + public keys</td>
+<td>Table-level + public keys</td>
+<td>Medium</td>
 </tr>
 <tr>
 <td><code>column</code></td>
-<td>Per-column contributions</td>
+<td>Per-column/group contributions</td>
+<td>Medium</td>
 </tr>
 <tr>
 <td><code>partition</code></td>
-<td>Fine-grained partitions</td>
+<td>Fine-grained partition contributions</td>
+<td>Highest</td>
 </tr>
 </tbody>
 </table>
 <p>More detailed contribution assumptions may increase privacy risk.</p>
+<p>General recommendation:</p>
+<ul>
+<li>start with <code>table</code></li>
+<li>only increase granularity if required</li>
+<li>always minimise disclosed metadata</li>
+</ul>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<p>Example of partition-level DP contributions:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Partition&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;predicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;partitionValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Adelie&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;maxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;maxGroupsPerUnit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;maxContributions&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Interpretation:</p>
+<ul>
+<li>at most 200 rows in this partition</li>
+<li>one privacy unit may affect at most 3 groups</li>
+<li>one privacy unit contributes at most 1 row inside this partition</li>
+</ul>
 
 
 

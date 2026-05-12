@@ -491,6 +491,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Partitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-column-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Column Partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-column-group-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Column Group Partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1245,6 +1273,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Partitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-column-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Column Partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-column-group-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Column Group Partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1266,7 +1322,11 @@
 
 <h1 id="dummy-modeling-properties">Dummy Modeling Properties<a class="headerlink" href="#dummy-modeling-properties" title="Permanent link">&para;</a></h1>
 <p>CSVW-SAFE defines properties useful for generating realistic dummy datasets.</p>
-<p>These properties improve synthetic data quality while remaining compatible with differential privacy workflows.</p>
+<p>These properties improve dummy data quality while remaining compatible with differential privacy workflows.</p>
+<div class="admonition danger">
+<p class="admonition-title">Warning</p>
+<p>If they disclose private information, they should not be added.</p>
+</div>
 <h2 id="nullable-proportion">Nullable Proportion<a class="headerlink" href="#nullable-proportion" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1280,13 +1340,22 @@
 <td><code>nullableProportion</code></td>
 <td>Approximate fraction of null values</td>
 </tr>
+<tr>
+<td><code>maxNumPartitions</code></td>
+<td>Maximum number of partition (keys)</td>
+</tr>
 </tbody>
 </table>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;nullableProportion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;nullableProportion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;maxNumPartitions&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;publicKeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;January&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;February&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;exhaustiveKeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="p">}</span>
 </code></pre></div>
+These column will be generated with arounf 15% of null values and take values in ["January", "February", "a", "b", "c"]. The public keys and then random keys to have the same number of partitions as <code>maxNumPartitions</code>.</p>
+<p>Note: <code>nullableProportion</code> may be approximate. </p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <p>Dependencies describe relationships between columns.</p>
 <table>
@@ -1330,11 +1399,21 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<p>Another example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dependencyType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mapping&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;valueMap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;medical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;doctor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;nurse&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;engineer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;civil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mechanical&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h4 id="fixedperentity"><code>fixedPerEntity</code><a class="headerlink" href="#fixedperentity" title="Permanent link">&para;</a></h4>
 <p>Indicates values remain constant for the same privacy unit.</p>
 <p>Example:</p>
 <ul>
 <li>birth date per patient</li>
+<li>country of birth per individual</li>
 <li>height per (adult) person</li>
 </ul>
 <h2 id="public-keys">Public Keys<a class="headerlink" href="#public-keys" title="Permanent link">&para;</a></h2>
@@ -1349,7 +1428,7 @@
 <tbody>
 <tr>
 <td><code>publicKeys</code></td>
-<td>Known public values</td>
+<td>List of public values</td>
 </tr>
 <tr>
 <td><code>exhaustiveKeys</code></td>
@@ -1359,11 +1438,49 @@
 </table>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;publicKeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;January&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;February&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">&quot;publicKeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;January&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;February&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;exhaustiveKeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="p">}</span>
 </code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;keyValues&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;January&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;February&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;March&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;April&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;May&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;June&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;July&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;August&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;September&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;October&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;November&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;December&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;exhaustiveKeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+If <code>exhaustiveKeys=true</code>, all possible keys are publicly listed.</p>
 <h2 id="partitions">Partitions<a class="headerlink" href="#partitions" title="Permanent link">&para;</a></h2>
 <p>Partitions describe public regions of the domain.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>partition</code></td>
+<td>List of <code>csvw-safe:Partition</code> objects</td>
+</tr>
+<tr>
+<td><code>exhaustivePartitions</code></td>
+<td>Whether partitions fully cover the domain</td>
+</tr>
+</tbody>
+</table>
 <p>Examples:</p>
 <ul>
 <li>categories</li>
@@ -1376,6 +1493,62 @@
 <li>overlapping</li>
 <li>disjoint</li>
 </ul>
+<p>Both <code>csvw:Column</code> and <code>csvw:ColumnGroup</code> may define partitions.</p>
+<h3 id="example-column-partitions">Example: Column Partitions<a class="headerlink" href="#example-column-partitions" title="Permanent link">&para;</a></h3>
+<p>Example partitioning on the <code>species</code> column:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;species&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;datatype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;partitions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Partition&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;predicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;partitionValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Adelie&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;maxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Partition&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;predicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;partitionValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gentoo&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;maxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">124</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;keyValues&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Adelie&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Gentoo&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;exhaustiveKeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;maxNumPartitions&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="example-column-group-partitions">Example: Column Group Partitions<a class="headerlink" href="#example-column-group-partitions" title="Permanent link">&para;</a></h3>
+<p>Example partitioning on the <code>(species, island)</code> column:</p>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ColumnGroup&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;columnsInGroup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;species&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;island&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;partitions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Partition&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;predicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;species&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;partitionValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Adelie&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;island&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;partitionValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dream&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;maxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;maxNumPartitions&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="p">}</span>
+</code></pre></div>
+Column groups describe partitions resulting from grouping on multiple columns simultaneously.</p>
 
 
 
