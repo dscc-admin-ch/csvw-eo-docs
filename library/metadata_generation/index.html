@@ -727,10 +727,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#important-notes" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Important Notes
+        Notes
       
     </span>
   </a>
@@ -809,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integrations.md" class="md-nav__link">
+      <a href="../integration/" class="md-nav__link">
         
   
   
@@ -1225,10 +1225,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#important-notes" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Important Notes
+        Notes
       
     </span>
   </a>
@@ -1267,7 +1267,11 @@
 <li>Optional partitions</li>
 <li>Optional column groups</li>
 </ul>
-<p>The generated metadata is intended as a draft and must always be reviewed manually.</p>
+<div class="admonition danger">
+<p class="admonition-title">Important</p>
+<p>Automatically generated metadata may leak sensitive information.
+Manual review is always required before publication.</p>
+</div>
 <hr />
 <h2 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>make_metadata_from_data.py<span class="w"> </span><span class="se">\</span>
@@ -1302,6 +1306,7 @@
 </tr>
 </tbody>
 </table>
+<p>Higher level incurr more risk of disclosure. <strong>Always use the lowest metadata granularity sufficient for the use case.</strong></p>
 <h3 id="example-table-level-metadata">Example: Table-Level Metadata<a class="headerlink" href="#example-table-level-metadata" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>make_metadata_from_data.py<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>data.csv<span class="w"> </span><span class="se">\</span>
@@ -1326,14 +1331,13 @@
 <span class="w">  </span>--privacy_unit<span class="w"> </span>user_id<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--with_dependencies<span class="w"> </span>True
 </code></pre></div>
-<h2 id="important-notes">Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h2>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Datetime columns are inferred automatically</li>
 <li>Numeric bounds are inferred for numeric columns</li>
 <li>Dependency detection may increase runtime</li>
 <li>Fine-grained metadata increases disclosure risk</li>
 </ul>
-<p><strong>Always use the lowest metadata granularity sufficient for the use case.</strong></p>
 
 
 

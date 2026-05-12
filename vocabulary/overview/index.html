@@ -359,17 +359,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#documentation-sections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation Sections
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -748,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../library/integrations.md" class="md-nav__link">
+      <a href="../../library/integration/" class="md-nav__link">
         
   
   
@@ -1102,17 +1091,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#documentation-sections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation Sections
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1131,9 +1109,7 @@
 
 
 <h1 id="csvw-safe-overview">CSVW-SAFE Overview<a class="headerlink" href="#csvw-safe-overview" title="Permanent link">&para;</a></h1>
-<p>CSVW-SAFE extends the W3C
-<a href="https://www.w3.org/TR/tabular-data-model/">CSV on the Web (CSVW)</a>
-standard with privacy-safe metadata for:</p>
+<p>CSVW-SAFE extends the W3C <a href="https://www.w3.org/TR/tabular-data-model/">CSV on the Web (CSVW)</a> standard with privacy-safe metadata for:</p>
 <ul>
 <li>Differential Privacy (DP)</li>
 <li>Dummy data generation</li>
@@ -1141,8 +1117,8 @@ standard with privacy-safe metadata for:</p>
 <li>Public partition definitions</li>
 <li>Safe schema publication</li>
 </ul>
-<p>CSVW-SAFE allows organizations to publish assumptions and guarantees
-about datasets without exposing sensitive underlying records.</p>
+<p><img alt="Overview" src="../../images/csvw-safe_structure.png" /></p>
+<p>CSVW-SAFE allows organizations to publish assumptions and guarantees about datasets without exposing sensitive underlying records.</p>
 <p>These assumptions may include:</p>
 <ul>
 <li>dataset schema</li>
@@ -1152,10 +1128,11 @@ about datasets without exposing sensitive underlying records.</p>
 <li>contribution bounds for DP</li>
 <li>logical dependencies between columns</li>
 </ul>
-<p>WARNING:
-Some assumptions may themselves leak sensitive information.
+<div class="admonition danger">
+<p class="admonition-title">Warning</p>
+<p>Some assumptions may themselves leak sensitive information.
 Metadata must always be manually reviewed before publication.</p>
-<p><img alt="Overview" src="../../images/csvw-safe_structure.png" /></p>
+</div>
 <h2 id="main-concepts">Main Concepts<a class="headerlink" href="#main-concepts" title="Permanent link">&para;</a></h2>
 <p>CSVW-SAFE extends CSVW with:</p>
 <table>
@@ -1215,14 +1192,6 @@ Metadata must always be manually reviewed before publication.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="documentation-sections">Documentation Sections<a class="headerlink" href="#documentation-sections" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Classes</li>
-<li>Dummy modeling</li>
-<li>DP contribution assumptions</li>
-<li>Framework and validation</li>
-<li>Examples</li>
-</ul>
 
 
 

@@ -748,7 +748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integrations.md" class="md-nav__link">
+      <a href="../integration/" class="md-nav__link">
         
   
   
@@ -1131,7 +1131,7 @@
 
 
 <h1 id="csvw-safe-python-library">CSVW-SAFE Python Library<a class="headerlink" href="#csvw-safe-python-library" title="Permanent link">&para;</a></h1>
-<p>The <code>csvw-safe</code> Python package provides utilities for generating, validating, and using CSVW-SAFE metadata for safe data sharing and Differential Privacy (DP) workflows.</p>
+<p>The <code>csvw-safe</code> Python package provides utilities for generating, validating, and using CSVW-SAFE metadata for safe metadata sharing and Differential Privacy (DP) workflows.</p>
 <p>The library helps:</p>
 <ul>
 <li>Generate metadata from datasets</li>
@@ -1144,7 +1144,7 @@
 <ul>
 <li>Differential Privacy workflows</li>
 <li>Safe metadata publication</li>
-<li>Synthetic data generation</li>
+<li>Dummy data generation</li>
 <li>DP query calibration</li>
 <li>Testing and prototyping</li>
 </ul>
@@ -1165,7 +1165,7 @@
 </tr>
 <tr>
 <td><code>make_dummy_from_metadata.py</code></td>
-<td>Generate synthetic datasets from metadata</td>
+<td>Generate dummy datasets from metadata</td>
 </tr>
 <tr>
 <td><code>validate_metadata.py</code></td>
@@ -1204,16 +1204,15 @@
 <p><img alt="Integrations" src="../../images/csvwsafe_workflow_2.png" /></p>
 <hr />
 <h2 id="important-safety-notes">Important Safety Notes<a class="headerlink" href="#important-safety-notes" title="Permanent link">&para;</a></h2>
-<p>The library assists safe data workflows but does not replace governance decisions.</p>
-<p>Automatically generated metadata may reveal sensitive information if not reviewed carefully.</p>
+<p>The library assists safe (meta)data workflows but does not replace governance decisions.</p>
+<p><strong>Automatically generated metadata may reveal sensitive information if not reviewed carefully</strong>.</p>
 <p>Before publishing metadata:</p>
 <ul>
-<li>Review all generated properties</li>
-<li>Remove unnecessary statistics</li>
+<li>Review all generated properties and remove unnecessary ones</li>
 <li>Minimize disclosure</li>
 <li>Verify that all released information is public</li>
 </ul>
-<p>Metadata should describe safe assumptions about possible datasets, not confidential properties of the observed dataset itself.</p>
+<p>Metadata should describe safe and public assumptions about possible datasets, not confidential properties of the observed dataset itself.</p>
 
 
 
