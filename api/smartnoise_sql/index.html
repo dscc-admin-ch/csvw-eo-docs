@@ -1862,22 +1862,22 @@ Defaults and meaning are taken directly from https://docs.smartnoise.org/sql/met
 <details class="command-line-arguments" open>
   <summary>Command-line arguments</summary>
   <p>--input : str (required)
-    Path to input CSVW-EO JSON metadata file.
---output : str (required)
-    Path to output SmartNoise YAML metadata file.
---schema : str (default="MySchema")
-    SmartNoise schema name.
---table : str (default="MyTable")
-    SmartNoise table name.
---sample_max_ids : bool (default=True)
-    Skip reservoir sampling if users appear at most max_ids times.
---censor_dims : bool (default=True)
-    Drop GROUP BY output rows that might reveal rare individuals.
---clamp_counts : bool (default=False)
-    Clamp negative DP counts to zero.
---clamp_columns : bool (default=True)
-    Clamp all input data to the column lower/upper bounds.
---use_dpsu : bool (default=False)
+    Path to input CSVW-EO JSON metadata file.</p>
+<p>--output : str (required)
+    Path to output SmartNoise YAML metadata file.</p>
+<p>--schema : str (default="MySchema")
+    SmartNoise schema name.</p>
+<p>--table : str (default="MyTable")
+    SmartNoise table name.</p>
+<p>--sample_max_ids : bool (default=True)
+    Skip reservoir sampling if users appear at most max_ids times.</p>
+<p>--censor_dims : bool (default=True)
+    Drop GROUP BY output rows that might reveal rare individuals.</p>
+<p>--clamp_counts : bool (default=False)
+    Clamp negative DP counts to zero.</p>
+<p>--clamp_columns : bool (default=True)
+    Clamp all input data to the column lower/upper bounds.</p>
+<p>--use_dpsu : bool (default=False)
     Use Differential Private Set Union for rare dimensions.</p>
 </details>
 
@@ -1959,7 +1959,15 @@ Defaults and meaning are taken directly from https://docs.smartnoise.org/sql/met
 <span class="normal">254</span>
 <span class="normal">255</span>
 <span class="normal">256</span>
-<span class="normal">257</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    CLI for converting CSVW-EO JSON metadata to SmartNoise SQL YAML metadata.</span>
 
@@ -1973,20 +1981,28 @@ Defaults and meaning are taken directly from https://docs.smartnoise.org/sql/met
 <span class="sd">    ----------------------</span>
 <span class="sd">    --input : str (required)</span>
 <span class="sd">        Path to input CSVW-EO JSON metadata file.</span>
+
 <span class="sd">    --output : str (required)</span>
 <span class="sd">        Path to output SmartNoise YAML metadata file.</span>
+
 <span class="sd">    --schema : str (default=&quot;MySchema&quot;)</span>
 <span class="sd">        SmartNoise schema name.</span>
+
 <span class="sd">    --table : str (default=&quot;MyTable&quot;)</span>
 <span class="sd">        SmartNoise table name.</span>
+
 <span class="sd">    --sample_max_ids : bool (default=True)</span>
 <span class="sd">        Skip reservoir sampling if users appear at most max_ids times.</span>
+
 <span class="sd">    --censor_dims : bool (default=True)</span>
 <span class="sd">        Drop GROUP BY output rows that might reveal rare individuals.</span>
+
 <span class="sd">    --clamp_counts : bool (default=False)</span>
 <span class="sd">        Clamp negative DP counts to zero.</span>
+
 <span class="sd">    --clamp_columns : bool (default=True)</span>
 <span class="sd">        Clamp all input data to the column lower/upper bounds.</span>
+
 <span class="sd">    --use_dpsu : bool (default=False)</span>
 <span class="sd">        Use Differential Private Set Union for rare dimensions.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
