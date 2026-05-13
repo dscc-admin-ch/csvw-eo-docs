@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="CSVW-SAFE vocabulary and Python library">
+        <meta name="description" content="CSVW-EO vocabulary and Python library">
       
       
       
-        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-safe-docs/vocabulary/examples/">
+        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-eo-docs/vocabulary/examples/">
       
       
         <link rel="prev" href="../framework/">
@@ -27,7 +27,7 @@
     
     
       
-        <title>Examples - CSVW-SAFE</title>
+        <title>Examples - CSVW-EO</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#csvw-safe-examples" class="md-skip">
+        <a href="#csvw-eo-examples" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="CSVW-SAFE" class="md-header__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-EO" class="md-header__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            CSVW-SAFE
+            CSVW-EO
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -184,13 +184,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="CSVW-SAFE" class="md-nav__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-EO" class="md-nav__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    CSVW-SAFE
+    CSVW-EO
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -764,6 +764,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../library/table_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pydantic Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../library/validation/" class="md-nav__link">
         
   
@@ -1218,7 +1246,7 @@
 
 
 
-<h1 id="csvw-safe-examples">CSVW-SAFE Examples<a class="headerlink" href="#csvw-safe-examples" title="Permanent link">&para;</a></h1>
+<h1 id="csvw-eo-examples">CSVW-EO Examples<a class="headerlink" href="#csvw-eo-examples" title="Permanent link">&para;</a></h1>
 <p>This section provides example metadata structures.</p>
 <h2 id="minimal-table">Minimal Table<a class="headerlink" href="#minimal-table" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1240,8 +1268,8 @@
 </code></pre></div>
 <h2 id="partition-example">Partition Example<a class="headerlink" href="#partition-example" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csvw-safe:Partition&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;csvw-safe:predicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csvw-eo:Partition&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;csvw-eo:predicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;month&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;January&quot;</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;maxContributions&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span>
@@ -1249,8 +1277,8 @@
 </code></pre></div>
 <h2 id="column-group-example">Column Group Example<a class="headerlink" href="#column-group-example" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csvw-safe:ColumnGroup&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;csvw-safe:columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csvw-eo:ColumnGroup&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;csvw-eo:columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">&quot;year&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;month&quot;</span>
 <span class="w">  </span><span class="p">]</span>
@@ -1283,16 +1311,8 @@
 <h2 id="complete-example">Complete Example<a class="headerlink" href="#complete-example" title="Permanent link">&para;</a></h2>
 <p>See:</p>
 <ul>
-<li>Penguin metadata example</li>
-<li>Example notebooks</li>
-<li>CSVW-SAFE library examples</li>
-</ul>
-<p>Repository examples demonstrate:</p>
-<ul>
-<li>metadata generation</li>
-<li>validation</li>
-<li>dummy data generation</li>
-<li>DP workflows</li>
+<li>Penguin metadata examples <a href="https://github.com/dscc-admin-ch/csvw-eo/tree/main/csvw-eo-library/examples/metadata">here</a></li>
+<li>Example notebook <a href="https://github.com/dscc-admin-ch/csvw-eo/blob/main/csvw-eo-library/examples/Use-Library.ipynb">here</a></li>
 </ul>
 
 

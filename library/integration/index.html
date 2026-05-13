@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="CSVW-SAFE vocabulary and Python library">
+        <meta name="description" content="CSVW-EO vocabulary and Python library">
       
       
       
-        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-safe-docs/library/integration/">
+        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-eo-docs/library/integration/">
       
       
         <link rel="prev" href="../validation/">
@@ -27,7 +27,7 @@
     
     
       
-        <title>Integrations - CSVW-SAFE</title>
+        <title>Integrations - CSVW-EO</title>
       
     
     
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="CSVW-SAFE" class="md-header__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-EO" class="md-header__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            CSVW-SAFE
+            CSVW-EO
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -184,13 +184,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="CSVW-SAFE" class="md-nav__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-EO" class="md-nav__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    CSVW-SAFE
+    CSVW-EO
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -640,6 +640,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../table_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pydantic Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../validation/" class="md-nav__link">
         
   
@@ -1020,7 +1048,7 @@
 
 
 <h1 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">&para;</a></h1>
-<p>CSVW-SAFE metadata can be integrated with Differential Privacy libraries and systems.</p>
+<p>CSVW-EO metadata can be integrated with Differential Privacy libraries and systems.</p>
 <p>Currently supported integrations include:</p>
 <ul>
 <li>SmartNoise SQL</li>
@@ -1028,13 +1056,13 @@
 </ul>
 <hr />
 <h1 id="smartnoise-sql-integration">SmartNoise SQL Integration<a class="headerlink" href="#smartnoise-sql-integration" title="Permanent link">&para;</a></h1>
-<p>The <code>csvw_to_smartnoise_sql.py</code> utility converts CSVW-SAFE metadata into SmartNoise SQL YAML configuration.</p>
+<p>The <code>csvw_to_smartnoise_sql.py</code> utility converts CSVW-EO metadata into SmartNoise SQL YAML configuration.</p>
 <hr />
 <h2 id="supported-mappings">Supported Mappings<a class="headerlink" href="#supported-mappings" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>CSVW-SAFE</th>
+<th>CSVW-EO</th>
 <th>SmartNoise SQL</th>
 </tr>
 </thead>
@@ -1077,7 +1105,7 @@
 <h2 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>import<span class="w"> </span>polars<span class="w"> </span>as<span class="w"> </span>pl
 
-from<span class="w"> </span>csvw_safe.csvw_to_opendp_context<span class="w"> </span>import<span class="w"> </span><span class="o">(</span>
+from<span class="w"> </span>csvw_eo.csvw_to_opendp_context<span class="w"> </span>import<span class="w"> </span><span class="o">(</span>
 <span class="w">    </span>csvw_to_opendp_context,
 <span class="o">)</span>
 
@@ -1090,7 +1118,7 @@ from<span class="w"> </span>csvw_safe.csvw_to_opendp_context<span class="w"> </s
 <span class="o">)</span>
 </code></pre></div>
 <h2 id="design-goal">Design Goal<a class="headerlink" href="#design-goal" title="Permanent link">&para;</a></h2>
-<p>CSVW-SAFE aims to provide a portable metadata layer between Differential Privacy systems.</p>
+<p>CSVW-EO aims to provide a portable metadata layer between Differential Privacy systems.</p>
 <p>The metadata should remain implementation-independent while still enabling automated DP workflows.</p>
 
 

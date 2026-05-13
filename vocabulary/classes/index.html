@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="CSVW-SAFE vocabulary and Python library">
+        <meta name="description" content="CSVW-EO vocabulary and Python library">
       
       
       
-        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-safe-docs/vocabulary/classes/">
+        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-eo-docs/vocabulary/classes/">
       
       
         <link rel="prev" href="../overview/">
@@ -27,7 +27,7 @@
     
     
       
-        <title>Classes - CSVW-SAFE</title>
+        <title>Classes - CSVW-EO</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#csvw-safe-classes" class="md-skip">
+        <a href="#csvw-eo-classes" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="CSVW-SAFE" class="md-header__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-EO" class="md-header__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            CSVW-SAFE
+            CSVW-EO
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -184,13 +184,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="CSVW-SAFE" class="md-nav__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-EO" class="md-nav__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    CSVW-SAFE
+    CSVW-EO
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -742,6 +742,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../library/table_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pydantic Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../library/validation/" class="md-nav__link">
         
   
@@ -1174,8 +1202,8 @@
 
 
 
-<h1 id="csvw-safe-classes">CSVW-SAFE Classes<a class="headerlink" href="#csvw-safe-classes" title="Permanent link">&para;</a></h1>
-<p>CSVW-SAFE defines four main classes.</p>
+<h1 id="csvw-eo-classes">CSVW-EO Classes<a class="headerlink" href="#csvw-eo-classes" title="Permanent link">&para;</a></h1>
+<p>CSVW-EO defines four main classes.</p>
 <table>
 <thead>
 <tr>
@@ -1193,11 +1221,11 @@
 <td>Single-column metadata</td>
 </tr>
 <tr>
-<td><code>csvw-safe:ColumnGroup</code></td>
+<td><code>csvw-eo:ColumnGroup</code></td>
 <td>Multi-column grouping metadata</td>
 </tr>
 <tr>
-<td><code>csvw-safe:Partition</code></td>
+<td><code>csvw-eo:Partition</code></td>
 <td>Public partition definitions</td>
 </tr>
 </tbody>
@@ -1245,7 +1273,7 @@
 <span class="p">}</span>
 </code></pre></div></p>
 <h2 id="columngroup">ColumnGroup<a class="headerlink" href="#columngroup" title="Permanent link">&para;</a></h2>
-<p>A <code>csvw-safe:ColumnGroup</code> describes grouping assumptions on multiple columns simultaneously.</p>
+<p>A <code>csvw-eo:ColumnGroup</code> describes grouping assumptions on multiple columns simultaneously.</p>
 <p>Typical use cases:</p>
 <ul>
 <li>(year, month)</li>
@@ -1286,7 +1314,7 @@
 <span class="p">]</span>
 </code></pre></div>
 <h2 id="partition">Partition<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h2>
-<p>A <code>csvw-safe:Partition</code> defines a region of a value domain.</p>
+<p>A <code>csvw-eo:Partition</code> defines a region of a value domain.</p>
 <p>Examples:</p>
 <ul>
 <li>one category</li>
@@ -1298,12 +1326,12 @@
 <li>contribution bounds</li>
 <li>public lengths</li>
 </ul>
-<p>A <code>csvw:Column</code> or a <code>csvw-safe:ColumnGroup</code> can have a list of partitions in the field <code>partition</code>. If they are exhaustive then, <code>exhaustivePartitions</code> may be True.</p>
+<p>A <code>csvw:Column</code> or a <code>csvw-eo:ColumnGroup</code> can have a list of partitions in the field <code>partition</code>. If they are exhaustive then, <code>exhaustivePartitions</code> may be True.</p>
 <p>Example:</p>
 <p>Categorical column
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csvw-safe:Partition&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;csvw-safe:predicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csvw-eo:Partition&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;csvw-eo:predicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;partitionValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Biscoe&quot;</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;maxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
@@ -1313,8 +1341,8 @@
 </code></pre></div></p>
 <p>Continuous column
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csvw-safe:Partition&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;csvw-safe:predicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csvw-eo:Partition&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;csvw-eo:predicate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;lowerBound&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;upperBound&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
 <span class="w">  </span><span class="p">},</span>
@@ -1324,9 +1352,9 @@
 <span class="p">}</span>
 </code></pre></div></p>
 <h2 id="json-ld-structure">JSON-LD Structure<a class="headerlink" href="#json-ld-structure" title="Permanent link">&para;</a></h2>
-<p>CSVW-SAFE extends standard CSVW JSON-LD structures with additional properties and objects.
-This image presents the base <code>csvw</code> json-ld structure on the left and the extended <code>csvw-safe</code>.</p>
-<p><img alt="Overview" src="../../images/csvw-safe_structure.png" /></p>
+<p>CSVW-EO extends standard CSVW JSON-LD structures with additional properties and objects.
+This image presents the base <code>csvw</code> json-ld structure on the left and the extended <code>csvw-eo</code>.</p>
+<p><img alt="Overview" src="../../images/csvw-eo_structure.png" /></p>
 
 
 

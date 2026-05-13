@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="CSVW-SAFE vocabulary and Python library">
+        <meta name="description" content="CSVW-EO vocabulary and Python library">
       
       
       
-        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-safe-docs/vocabulary/overview/">
+        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-eo-docs/vocabulary/overview/">
       
       
         <link rel="prev" href="../..">
@@ -27,7 +27,7 @@
     
     
       
-        <title>Introduction - CSVW-SAFE</title>
+        <title>Introduction - CSVW-EO</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#csvw-safe-overview" class="md-skip">
+        <a href="#csvw-eo-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="CSVW-SAFE" class="md-header__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-EO" class="md-header__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            CSVW-SAFE
+            CSVW-EO
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -184,13 +184,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="CSVW-SAFE" class="md-nav__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-EO" class="md-nav__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    CSVW-SAFE
+    CSVW-EO
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -709,6 +709,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../library/table_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pydantic Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../library/validation/" class="md-nav__link">
         
   
@@ -1108,8 +1136,8 @@
 
 
 
-<h1 id="csvw-safe-overview">CSVW-SAFE Overview<a class="headerlink" href="#csvw-safe-overview" title="Permanent link">&para;</a></h1>
-<p>CSVW-SAFE extends the W3C <a href="https://www.w3.org/TR/tabular-data-model/">CSV on the Web (CSVW)</a> standard with privacy-safe metadata for:</p>
+<h1 id="csvw-eo-overview">CSVW-EO Overview<a class="headerlink" href="#csvw-eo-overview" title="Permanent link">&para;</a></h1>
+<p>CSVW-EO extends the W3C <a href="https://www.w3.org/TR/tabular-data-model/">CSV on the Web (CSVW)</a> standard with privacy-safe metadata for:</p>
 <ul>
 <li>Differential Privacy (DP)</li>
 <li>Dummy data generation</li>
@@ -1117,8 +1145,8 @@
 <li>Public partition definitions</li>
 <li>Safe schema publication</li>
 </ul>
-<p><img alt="Overview" src="../../images/csvw-safe_structure.png" /></p>
-<p>CSVW-SAFE allows organizations to publish assumptions and guarantees about datasets without exposing sensitive underlying records.</p>
+<p><img alt="Overview" src="../../images/csvw-eo_structure.png" /></p>
+<p>CSVW-EO allows organizations to publish assumptions and guarantees about datasets without exposing sensitive underlying records.</p>
 <p>These assumptions may include:</p>
 <ul>
 <li>dataset schema</li>
@@ -1134,7 +1162,7 @@
 Metadata must always be manually reviewed before publication.</p>
 </div>
 <h2 id="main-concepts">Main Concepts<a class="headerlink" href="#main-concepts" title="Permanent link">&para;</a></h2>
-<p>CSVW-SAFE extends CSVW with:</p>
+<p>CSVW-EO extends CSVW with:</p>
 <table>
 <thead>
 <tr>
@@ -1175,19 +1203,19 @@ Metadata must always be manually reviewed before publication.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>csvw-safe-vocab.ttl</code></td>
+<td><code>csvw-eo-vocab.ttl</code></td>
 <td>RDF vocabulary</td>
 </tr>
 <tr>
-<td><code>csvw-safe-context.jsonld</code></td>
+<td><code>csvw-eo-context.jsonld</code></td>
 <td>JSON-LD context</td>
 </tr>
 <tr>
-<td><code>csvw-safe-constraints.ttl</code></td>
+<td><code>csvw-eo-constraints.ttl</code></td>
 <td>SHACL validation</td>
 </tr>
 <tr>
-<td><code>csvw-safe-library</code></td>
+<td><code>csvw-eo-library</code></td>
 <td>Python tooling</td>
 </tr>
 </tbody>

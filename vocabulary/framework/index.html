@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="CSVW-SAFE vocabulary and Python library">
+        <meta name="description" content="CSVW-EO vocabulary and Python library">
       
       
       
-        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-safe-docs/vocabulary/framework/">
+        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-eo-docs/vocabulary/framework/">
       
       
         <link rel="prev" href="../dp_contributions/">
@@ -27,7 +27,7 @@
     
     
       
-        <title>Framework - CSVW-SAFE</title>
+        <title>Framework - CSVW-EO</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#csvw-safe-framework" class="md-skip">
+        <a href="#csvw-eo-framework" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="CSVW-SAFE" class="md-header__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-EO" class="md-header__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            CSVW-SAFE
+            CSVW-EO
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -184,13 +184,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="CSVW-SAFE" class="md-nav__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="../.." title="CSVW-EO" class="md-nav__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    CSVW-SAFE
+    CSVW-EO
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -759,6 +759,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../library/table_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pydantic Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../library/validation/" class="md-nav__link">
         
   
@@ -1208,8 +1236,8 @@
 
 
 
-<h1 id="csvw-safe-framework">CSVW-SAFE Framework<a class="headerlink" href="#csvw-safe-framework" title="Permanent link">&para;</a></h1>
-<p>CSVW-SAFE consists of vocabulary definitions, validation rules, and Python tooling.</p>
+<h1 id="csvw-eo-framework">CSVW-EO Framework<a class="headerlink" href="#csvw-eo-framework" title="Permanent link">&para;</a></h1>
+<p>CSVW-EO consists of vocabulary definitions, validation rules, and Python tooling.</p>
 <h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1220,25 +1248,25 @@
 </thead>
 <tbody>
 <tr>
-<td><code>csvw-safe-vocab.ttl</code></td>
+<td><code>csvw-eo-vocab.ttl</code></td>
 <td>RDF vocabulary</td>
 </tr>
 <tr>
-<td><code>csvw-safe-context.jsonld</code></td>
+<td><code>csvw-eo-context.jsonld</code></td>
 <td>JSON-LD context</td>
 </tr>
 <tr>
-<td><code>csvw-safe-constraints.ttl</code></td>
+<td><code>csvw-eo-constraints.ttl</code></td>
 <td>SHACL constraints</td>
 </tr>
 <tr>
-<td><code>csvw-safe-library</code></td>
+<td><code>csvw-eo-library</code></td>
 <td>Python tooling</td>
 </tr>
 </tbody>
 </table>
 <h2 id="validation-layers">Validation Layers<a class="headerlink" href="#validation-layers" title="Permanent link">&para;</a></h2>
-<p>CSVW-SAFE metadata may be validated using:</p>
+<p>CSVW-EO metadata may be validated using:</p>
 <h3 id="pydantic-validation">Pydantic Validation<a class="headerlink" href="#pydantic-validation" title="Permanent link">&para;</a></h3>
 <p>Implemented in:</p>
 <ul>
@@ -1262,7 +1290,7 @@
 <li>semantic rules</li>
 </ul>
 <h2 id="python-library">Python Library<a class="headerlink" href="#python-library" title="Permanent link">&para;</a></h2>
-<p>The <code>csvw-safe-library</code> provides:</p>
+<p>The <code>csvw-eo-library</code> provides:</p>
 <ul>
 <li>metadata generation</li>
 <li>dummy data generation</li>
@@ -1273,7 +1301,7 @@
 <p><img alt="Workflow" src="../../images/csvwsafe_workflow_1.png" />
 <img alt="Integrations" src="../../images/csvwsafe_workflow_2.png" /></p>
 <h2 id="differential-privacy-integrations">Differential Privacy Integrations<a class="headerlink" href="#differential-privacy-integrations" title="Permanent link">&para;</a></h2>
-<p>CSVW-SAFE can be converted to:</p>
+<p>CSVW-EO can be converted to:</p>
 <ul>
 <li>OpenDP contexts</li>
 <li>SmartNoise SQL metadata</li>

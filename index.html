@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="CSVW-SAFE vocabulary and Python library">
+        <meta name="description" content="CSVW-EO vocabulary and Python library">
       
       
       
-        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-safe-docs/">
+        <link rel="canonical" href="https://dscc-admin-ch.github.io/csvw-eo-docs/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>CSVW-SAFE</title>
+        <title>CSVW-EO</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#csvw-safe" class="md-skip">
+        <a href="#csvw-eo" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="CSVW-SAFE" class="md-header__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="." title="CSVW-EO" class="md-header__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -98,7 +98,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            CSVW-SAFE
+            CSVW-EO
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -182,13 +182,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="CSVW-SAFE" class="md-nav__button md-logo" aria-label="CSVW-SAFE" data-md-component="logo">
+    <a href="." title="CSVW-EO" class="md-nav__button md-logo" aria-label="CSVW-EO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    CSVW-SAFE
+    CSVW-EO
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -275,6 +275,17 @@
     <span class="md-ellipsis">
       
         Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#work-in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work in Progress
       
     </span>
   </a>
@@ -705,6 +716,34 @@
   
   
     <li class="md-nav__item">
+      <a href="library/table_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pydantic Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="library/validation/" class="md-nav__link">
         
   
@@ -1087,6 +1126,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#work-in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work in Progress
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1104,16 +1154,17 @@
 
 
 
-<h1 id="csvw-safe">CSVW-SAFE<a class="headerlink" href="#csvw-safe" title="Permanent link">&para;</a></h1>
-<p>CSVW-SAFE extends the W3C
-<a href="https://www.w3.org/TR/tabular-data-model/">CSV on the Web (CSVW)</a> with privacy-safe metadata for differential privacy workflows and dummy dataset generation.</p>
+<h1 id="csvw-eo">CSVW-EO<a class="headerlink" href="#csvw-eo" title="Permanent link">&para;</a></h1>
+<p>CSVW-EO extends the W3C <a href="https://www.w3.org/TR/tabular-data-model/">CSV on the Web (CSVW)</a> with metadata for differential privacy workflows and dummy dataset generation.</p>
+<p>EO stands for "Eyes-Off", highlighting privacy-preserving workflows in which sensitive data remains unobserved by users while still enabling metadata generation, validation, and dummy dataset creation.</p>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Metadata generation</li>
+<li>Metadata validation</li>
 <li>Dummy data generation</li>
-<li>SHACL validation</li>
-<li>OpenDP integration</li>
-<li>SmartNoise SQL integration</li>
+<li><a href="https://github.com/dscc-admin-ch/csvw-eo/blob/main/csvw-eo-constraints.ttl">SHACL validation</a></li>
+<li><a href="https://docs.opendp.org/en/stable/index.html">opendp</a> integration</li>
+<li><a href="https://docs.smartnoise.org/sql/index.html#metadata">smartnoise_sql</a> integration</li>
 </ul>
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1121,6 +1172,9 @@
 <li>Python library</li>
 <li>API reference</li>
 </ul>
+<h2 id="work-in-progress">Work in Progress<a class="headerlink" href="#work-in-progress" title="Permanent link">&para;</a></h2>
+<p>CSVW-EO is currently under active development. The project is evolving, and new features, improvements, and documentation updates are being added continuously.</p>
+<p>Contributions, feedback, and discussions are welcome. A roadmap of planned tasks and ongoing work can be found in the project board: <a href="https://github.com/orgs/dscc-admin-ch/projects/10/views/1">board</a>.</p>
 
 
 
